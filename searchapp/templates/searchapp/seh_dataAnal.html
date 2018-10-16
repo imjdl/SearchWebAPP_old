@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ECharts">
+    <link rel="stylesheet" href="{% static "searchapp/bak_page/css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "searchapp/bak_page/css/public.css"%}">
+    <link rel="stylesheet" href={% static "searchapp/bak_page/css/dataAnal.css" %}>
+    <script src={% static "searchapp/bak_page/js/jquery.min.js" %}></script>
+    <script src={% static "searchapp/bak_page/js/bootstrap.min.js" %}></script>
+    <title>Data Analysis</title>
+    <script src={% static "searchapp/bak_page/js/echarts.min.js" %}></script>
+    <link rel="stylesheet" href="{% static "searchapp/css/xq_navbar.css" %}"/>
+    <link rel="stylesheet" href="{% static "searchapp/css/xq.css" %}"/>
+</head>
+<body>
+{% include "searchapp/seh_login.html" %}
+<div class="all_div">
+        {% include "searchapp/seh_navbar.html" %}
+        <div class="container">
+            <div class="statistic-total">
+                <h1>数据统计</h1>
+                <br>
+                <br>
+                <div class="row card">
+                    <div class="col-md-4">
+                        <div class="statistic-card one">
+                            <p class="statistics-card-title">
+                            <span class="statistics-card-icon">
+                            <img src= {% static "searchapp/bak_page/img/site.svg" %}>
+                        </span>
+                                <span>IP</span>
+                            </p>
+                            <p class="statistics-card-value">{{ data_num }}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="statistic-card two">
+                            <p class="statistics-card-title">
+                            <span class="statistics-card-icon">
+                            <img src={% static "searchapp/bak_page/img/ip.svg" %}>
+                        </span>
+                                <span>组件</span>
+                            </p>
+                            <p class="statistics-card-value" id="zujian_value">0</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="statistic-card three">
+                            <p class="statistics-card-title">
+                            <span class="statistics-card-icon">
+                            <img src="{% static "searchapp/bak_page/img/app.svg" %}">
+                        </span>
+                                <span>web应用</span>
+                            </p>
+                            <p id="webapp_value" class="statistics-card-value">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="statistic-bar">
+                <div class="statistic-bar-two statistic-total-bar">
+                    <h1>Web应用</h1>
+                    <div id="main1" class="main">
+                    </div>
+                </div>
+                <div class="statistic-bar-four statistic-total-bar">
+                    <h1>组件</h1>
+                    <div id="main2" class="main">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <p align="center" style="color: #6198A4" >
+        MY WAY OR THE HIGHWAY<br/>
+        Copyright© Elloit Alderson Team. Version 1.1
+    </p>
+    <script>var getdata = "{% url "webdata" %}";</script>
+    <script src="{% static "searchapp/bak_page/js/dataAnal.js" %}"></script>
+</body>
+<script src="{% static "searchapp/js/jquery.min.js" %}" type="text/javascript"></script>
+<script src="{% static "searchapp/js/xq_navbar.js" %}" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function(){
+        $("#bar1").xq_navbar({"type":"underline","liwidth":"auto","bgcolor":"#000","hcolor":"#f0f"});
+        $("#bar2").xq_navbar({"type":"beat","liwidth":"avg","bgcolor":"#000","hcolor":"#f0f"});
+        $("#bar3").xq_navbar({"type":"line","liwidth":"avg","bgcolor":"#000"});
+        $("#bar4").xq_navbar({"type":"overline","liwidth":"120","bgcolor":"#000"});
+        $("#bar5").xq_navbar({"type":"block","liwidth":"avg","bgcolor":"#000","hcolor":["blue","rgb(10,100,100)","red","pink","green","rgba(23,234,22,1)","rgb(230,230,230)"]});
+    });
+</script>
+</html>

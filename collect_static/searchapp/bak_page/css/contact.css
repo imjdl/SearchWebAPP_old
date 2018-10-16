@@ -1,0 +1,50 @@
+body {
+    margin:0;
+    padding: 0;
+    background: url("../../img/mapbg.png");
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    overflow-x: hidden;
+    color: #28FEFC;
+}
+.all_div{
+    margin: -100px auto;
+    width: 1000px;
+    height: auto;
+}
+#bar3{
+    width: 100%;
+    height: auto;
+}
+.suggestion-content {
+    padding: 40px 13px 20px;
+    min-height: calc(100% - 200px);
+}
+
+.content-with {
+    margin: 0 auto;
+    padding: 0 13px;
+    width: 80%;
+}
+
+.suggestion-content h1 {
+    font-weight: bold;
+    padding-left: 10px;
+    height: 26px;
+    line-height: 26px;
+    font-size: 18px;
+    color: #333;
+}
+
+.suggestion-form {
+    margin-top: 11px;
+    padding: 30px;
+    /*background: #fff;*/
+    text-align: center;
+    overflow-y: auto;
+}
+
+form {
+    display: block;
+}

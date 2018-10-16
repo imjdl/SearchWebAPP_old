@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>SearchAPP 后台管理登录</title>
+  <!-- Bootstrap core CSS-->
+  <link href={% static "search_manager/vendor/bootstrap/css/bootstrap.min.css" %} rel="stylesheet">
+  <!-- Custom fonts for this template-->
+  <link href={% static "search_manager/vendor/font-awesome/css/font-awesome.min.css" %} rel="stylesheet" type="text/css">
+  <!-- Custom styles for this template-->
+  <link href={% static "search_manager/css/sb-admin.css" %} rel="stylesheet">
+</head>
+
+<body class="bg-dark">
+  <div class="container">
+      <br/>
+      <br/>
+      <br/>
+    <h1 style="color: #fff;" align="center">SearchApp 后台管理系统</h1>
+    <div class="card card-login mx-auto mt-5">
+      <div class="card-header">
+          登录 <span id="header-msg" style="color:red;"></span>
+      </div>
+      <div class="card-body">
+        <form name="login_from">
+            {% csrf_token %}
+          <div class="form-group">
+            <label for="exampleInputEmail1">用户名</label>
+            <input class="form-control" id="Inputname" type="text" aria-describedby="emailHelp" placeholder="填写用户名">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">密码</label>
+            <input class="form-control" autocomplete="off" id="InputPassword" type="password" placeholder="填写密码">
+          </div>
+          <a class="btn btn-primary btn-block" onclick="login()">登录</a>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script>
+      var login_url = "{% url "login_manager" %}";
+  </script>
+  <script src="{% static "search_manager/js/admin_login.js" %}"></script>
+  <!-- Bootstrap core JavaScript-->
+  <script src="{% static "search_manager/vendor/jquery/jquery.min.js" %}"></script>
+  <script src="{% static "search_manager/vendor/bootstrap/js/bootstrap.bundle.min.js" %}"></script>
+  <!-- Core plugin JavaScript-->
+  <script src="{% static "search_manager/vendor/jquery-easing/jquery.easing.min.js" %}"></script>
+  <div style="margin: 20px auto;width: 50%;height: auto;color: #6198A4" align="center">
+      <br/>
+      <p style="color: white">
+          死亡过于绝对，而活着，则有无限的可能。
+      </p>
+      <p style="color: #fff;" align="center">--<span>冰与火之歌</span></p>
+      <p>Copyright© SearchApp By Elloit team 2016-2017</p>
+  </div>
+</body>
+
+</html>

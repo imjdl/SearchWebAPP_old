@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ tag }}</title>
+    <link type="text/css" rel="stylesheet" href="{% static "searchapp/css/search.css" %}">
+    <link rel="stylesheet" href="{% static "searchapp/css/xq_navbar.css" %}"/>
+    <link rel="stylesheet" href="{% static "searchapp/css/xq.css" %}"/>
+</head>
+<body>
+{% include "searchapp/seh_login.html" %}
+<div class="all_div">
+    {% include "searchapp/seh_navbar.html" %}
+    <div class="search_bar">
+        <form action="{% url "search_data_process" %}" method="get">
+            <input name="search_msg" id="search_msg" type="search" value="{{ tag }}" />
+            <input name="page" type="hidden" value="1">
+        </form>
+        <script type="text/javascript">
+            var tags = "{{ tag }}";
+            var data_num = {{ total }};
+        </script>
+        <script type="text/javascript">
+            var data_page = {{ page }};
+        </script>
+        <p class="data_info" style="color: gray">
+            &nbsp;&nbsp;&nbsp;共有<span id="data_total" style="color: orangered;">0</span>条记录。
+              耗时<span id="search_time" style="color: orangered;">{{ time }}</span>秒
+        </p>
+    </div>
+    <br/>
+    <div class="show_data">
+        <hr>
+        <br/>
+        {% if all_hits == None %}
+            <h3 align="center">语法错误,请检查你的语法并参考<a style="text-decoration: none;color: white" target="_blank" href="{% url "help" %}">《帮助文档》</a></h3>
+        {% else %}
+        <div class="pageNav" align="center"></div>
+        <br/>
+        {% for data in all_hits %}
+            <div class="a_data">
+                <div class="a_data_left">
+                    <p>地址:&emsp;<span><a target="_blank" href="http://{{ data.ip }}">{{ data.ip }}</a></span></p>
+                    <p>服务:&emsp;<span>{{ data.server }}</span></p>
+                    <p>指纹:&emsp;<span>{{ data.prowerd }}</span></p>
+                    <p>标题:&emsp;<span>{{ data.title }}</span></p>
+                    <p>时间:&emsp;<span>{{ data.timestamp }}</span></p>
+                </div>
+                <div class="data_text">
+                    <pre>{{ data.read }}</pre>
+                </div>
+                <form method="get" action="{% url "data_info_detial" %}" target="_blank" >
+                    <input type="hidden" name="ip" value="{{ data.ip }}" />
+                    <input type="hidden" name="server" value="{{ data.server }}">
+                    <input type="hidden" name="prowerd" value="{{ data.prowerd }}">
+                    <input type="hidden" name="title" value="{{ data.title }}">
+                    <input type="submit"  class="datiel" value="查看详情"/>
+                </form>
+            </div>
+            <div class="clear"></div>
+            <br/>
+            <br/>
+            <br/>
+        {% endfor %}
+        <div class="pageNav" align="center"></div>
+        {% endif %}
+    </div>
+    <br/><br/><br/>
+    <p align="center" style="color: #6198A4" >
+        MY WAY OR THE HIGHWAY<br/>
+        Copyright© Elloit Alderson Team. Version 1.1
+    </p>
+    <script type="text/javascript" src="{% static "searchapp/js/showdata.js" %} "></script>
+    <script type="text/javascript" src="{% static "searchapp/js/pagevav.js" %}" ></script>
+</div>
+<script src="{% static "searchapp/js/jquery.min.js" %}" type="text/javascript"></script>
+<script src="{% static "searchapp/js/xq_navbar.js" %}" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function(){
+        $("#bar1").xq_navbar({"type":"underline","liwidth":"auto","bgcolor":"#000","hcolor":"#f0f"});
+        $("#bar2").xq_navbar({"type":"beat","liwidth":"avg","bgcolor":"#000","hcolor":"#f0f"});
+        $("#bar3").xq_navbar({"type":"line","liwidth":"avg","bgcolor":"#000"});
+        $("#bar4").xq_navbar({"type":"overline","liwidth":"120","bgcolor":"#000"});
+        $("#bar5").xq_navbar({"type":"block","liwidth":"avg","bgcolor":"#000","hcolor":["blue","rgb(10,100,100)","red","pink","green","rgba(23,234,22,1)","rgb(230,230,230)"]});
+    });
+</script>
+</body>
+</html>

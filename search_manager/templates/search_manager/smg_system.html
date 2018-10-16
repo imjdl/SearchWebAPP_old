@@ -1,0 +1,38 @@
+<script>var get_system_msg_url = "{% url "getsystemmsg" %}" </script>
+<div class="row">
+    <div class="col-xl-3 col-sm-6 mb-3">
+        <div class="card text-white bg-primary o-hidden h-100">
+            <div class="card-body">
+                <div id="disk1" class="mr-5"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-sm-6 mb-3">
+        <div class="card text-white bg-warning o-hidden h-100">
+            <div class="card-body">
+                <div id = "disk2" class="mr-5">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-sm-6 mb-3">
+        <div class="card text-white bg-success o-hidden h-100">
+            <div class="card-body">
+                <div id="sys_meorry" class="mr-5"></div>
+            </div>
+        </div>
+    </div>
+    {% for i in disk %}
+        <div class="col-xl-3 col-sm-6 mb-3">
+        <div class="card text-white bg-danger o-hidden h-100">
+            <div class="card-body">
+                <p style="font-size: 20px">磁盘{{ i.device }}: {{ i.percent }}%</p>
+                <p style="font-size: 20px">挂载点: {{ i.name }}</p>
+                <p style="font-size: 20px">共有:{{ i.total }}G</p>
+                <p style="font-size: 20px">已用:{{ i.used }}G</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>

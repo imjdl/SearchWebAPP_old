@@ -1,0 +1,184 @@
+body {
+    margin:0;
+    padding: 0;
+    background: url("../../img/mapbg.png");
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    overflow-x: hidden;
+    color: #28FEFC;
+}
+.all_div{
+    margin: -100px auto;
+    width: 1000px;
+    height: auto;
+}
+#bar3{
+    width: 100%;
+    height: auto;
+}
+.banner {
+    height: 470px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    color: #28FEFC;
+}
+
+.container .banner p,
+h1 {
+    /*color: #eeeff4;*/
+    color: #28FEFC;
+    text-align: center;
+}
+
+.container .banner .description {
+    margin-top: 30px;
+    z-index: 1;
+}
+
+.container .banner img {
+    z-index: 0;
+    position: absolute;
+    margin-left: 100px;
+}
+
+.container h2 {
+    margin-top: 90px;
+    text-align: center;
+    font-weight: normal;
+    /*color: #0f0f0f;*/
+}
+
+.searchCont {
+    padding: 50px 50px 0px 100px;
+    text-align: center;
+}
+
+.searchCont .text-left p {
+    text-indent: 16px;
+    color: #28FEFC;
+}
+
+.img-right {
+    width: 360px;
+    height: 220px;
+    border: 1px solid #e0e4e5;
+    background-repeat: no-repeat;
+    background-position: 100px 34px;
+    margin: 50px 0px 0px 100px;
+    margin-top: 55px;
+}
+
+.img-right img {
+    margin-top: 35px;
+}
+
+.container .about-prevent h4 {
+    text-align: center;
+}
+
+.tips {
+    margin-bottom: 100px;
+}
+
+.tips p {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.about-prevent-outer {
+    margin-left: 230px;
+    margin-bottom: 100px;
+}
+
+.about-prevent-card:hover .about-prevent-card-layer {
+    font-weight: normal;
+    height: 400px;
+    padding: 0px 16px 0px 16px;
+    color: #34A5DD;
+    background: rgba(0,0,0, .8);
+    opacity: 1;
+    cursor: pointer;
+    transition: background .5s ease-out;
+}
+
+.card-left,
+.card-right {
+    width: 360px;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-position: 50% 77%;
+    /*border: 1px solid #e0e4e5;*/
+    padding: 0px;
+}
+
+.card-left {
+    background-image: url(../img/web_iconOne.png);
+}
+
+.card-right {
+    margin-left: 150px;
+    background-image: url(../img/tool_iconTwo.png);
+}
+
+.about-prevent-outer .about-prevent-card h4 {
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+.about-prevent-card-layer {
+    z-index: 1;
+    overflow: hidden;
+    margin-top: -60px;
+    opacity: 0;
+}
+
+.about-prevent-outer .about-prevent-card .about-prevent-card-layer p {
+    width: 100%;
+    overflow: hidden;
+    text-indent: 2em;
+}
+
+.about-prevent-card-p1 {
+    margin-top: 30px;
+}
+
+.about-log {
+    text-align: center;
+}
+
+.about-log p {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#canvas {
+    width: 500px;
+    height: 300px;
+    text-align: center;
+    margin-left: 190px;
+    margin-bottom: 20px;
+}
+
+.details {
+    float: right;
+    display: inline-block;
+    text-align: left;
+    margin-right: 340px;
+    margin-top: 30px;
+}
+
+.data {
+    margin-bottom: 10px;
+}
+
+.contentText {
+    background-color: #dee1ec;
+    padding: 5px 100px 5px 20px;
+}
+
+.about-log .contentText p {
+    text-align: left;
+    margin-bottom: 10px;
+}

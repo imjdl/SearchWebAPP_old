@@ -1,0 +1,137 @@
+body {
+    margin:0;
+    padding: 0;
+    background: url("../../img/mapbg.png");
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    overflow-x: hidden;
+    color: #28FEFC;
+}
+.all_div{
+    margin: -100px auto;
+    width: 1000px;
+    height: auto;
+}
+#bar3{
+    width: 100%;
+    height: auto;
+}
+.banner {
+    height: 450px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    /*background-color: #2e313a;*/
+}
+
+.container .banner p,
+h1 {
+    text-align: left;
+    color: #eeeff4;
+}
+
+.manual {
+    margin-top: 50px;
+    margin-left: 100px;
+}
+
+.manual-left {
+    margin-top: 150px;
+}
+
+.container .banner .manual .manual-left p {
+    margin-top: 20px;
+}
+
+.container .banner .manual .manual-right img {
+    z-index: 0;
+    position: absolute;
+    margin-left: 150px;
+}
+
+.container .help-description {
+    /*background-color: #fff;*/
+    padding: 50px 0px 50px 0px;
+}
+
+.container h2,
+p {
+    text-align: center;
+}
+
+.help-text {
+    padding: 50px 100px 0px 150px;
+}
+
+.help-text p {
+    text-align: left;
+    line-height: 30px;
+}
+
+.help-text .recom p {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.help-text .recom p a {
+    color: rgb(250, 244, 244);
+    padding: 3px 15px;
+    text-decoration: none;
+    background-color: #9ca4bf;
+    border-radius: 15px;
+}
+
+.help-hotkey {
+    padding: 30px 0px 30px 0px;
+}
+
+.tab {
+    padding: 50px 0px 10px 0px;
+}
+
+.tab span {
+    color: #fff;
+    padding: 5px 17px;
+    margin-right: 5px;
+    background-color: #267ce0;
+    border-radius: 5px;
+}
+
+.help-skill {
+    /*background-color: #fff;*/
+    padding: 50px 0px 50px 0px;
+}
+
+.help-skill .help-title {
+    padding: 0px 0px 10px 100px;
+}
+
+.help-skill .help-title p,
+h4 {
+    text-align: left;
+    padding: 30px 500px 0px 0px;
+}
+
+.help-skill .help-skill-card {
+    margin-left: 100px;
+    padding-bottom: 10px;
+}
+
+.help-skill .help-skill-card p,
+h4 {
+    text-align: left;
+}
+
+.help-skill .help-skill-card span {
+    color: #fff;
+    margin-left: 10px;
+    background-color: #9ca4bf;
+    padding: 3px 15px;
+    border-radius: 10px;
+}
+
+.help-skill .help-skill-card span a {
+    color: #fff;
+    text-decoration: none;
+}

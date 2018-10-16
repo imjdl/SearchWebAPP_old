@@ -1,0 +1,161 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>SearchApp 后台</title>
+  <!-- Bootstrap core CSS-->
+  <link href="{% static "search_manager/vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+  <!-- Custom fonts for this template-->
+  <link href="{% static "search_manager/vendor/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet" type="text/css">
+  <!-- Custom styles for this template-->
+  <link href="{% static "search_manager/vendor/datatables/dataTables.bootstrap4.css" %}" rel="stylesheet">
+  <link href="{% static "search_manager/css/sb-admin.css" %}" rel="stylesheet"/>
+  <script src="{% static "search_manager/js/echarts.js" %}"></script>
+  <link href="{% static "search_manager/css/process.css" %}" rel="stylesheet"/>
+  <link href="{% static "search_manager/css/page.css" %}" rel="stylesheet"/>
+</head>
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+  <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" href="{% url "manager" %}">SearchApp 后台管理系统</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      {% include "search_manager/smg_left_panel.html" %}
+      <ul class="navbar-nav sidenav-toggler">
+        <li class="nav-item">
+          <a class="nav-link text-center" id="sidenavToggler">
+            <i class="fa fa-fw fa-angle-left"></i>
+          </a>
+        </li>
+      </ul>
+        {% include "search_manager/smg_heard_nav.html" %}
+    </div>
+  </nav>
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="{% url "admin" %}">仪表盘</a>
+        </li>
+        <li class="breadcrumb-item active">数据</li>
+      </ol>
+      <!-- Area Chart Example-->
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-area-chart"></i> 数据概览</div>
+        <div class="card-body">
+            <div id="myAreaChart" style="width: 100%;height: 300px"></div>
+        </div>
+        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+      </div>
+      <div class="row">
+        <div class="col-lg">
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fa fa-bar-chart"></i> 删减数据</div>
+            <div class="card-body">
+                <div id="myMangerChart" style="width: 100%;height: auto">
+                    <input type="search" id="msg" placeholder="搜索:"/>
+                    <button onclick="get_tabledata()">搜索</button>
+                    <input type="hidden" value="1" name="page" id="page"/>
+                    <table class="table table-bordered" width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>地址</th>
+                            <th>服务</th>
+                            <th>指纹</th>
+                            <th>标题</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tfoot>
+                        <tr>
+                            <th>地址</th>
+                            <th>服务</th>
+                            <th>指纹</th>
+                            <th>标题</th>
+                            <th>操作</th>
+                        </tr>
+                        </tfoot>
+                        <tbody id="table_data"></tbody>
+                    </table>
+                    <div id="page_nav" class="page_div"></div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-lg">
+              <div class="card-header">
+                  <i class="fa fa-bar-chart"></i> 添加数据 能力越大责任越大,请勿用于违法行为！
+              </div>
+              <div class="card mb-3">
+                  <div class="card-body">
+                      <div style="width: 100%;height: auto">
+                          <div style="width: 100%; height: 30em;">
+                              <div id="gateone"></div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+    <!-- /.container-fluid-->
+    <!-- /.content-wrapper-->
+      {% include "search_manager/smg_footer.html" %}
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+    <form name="csrf_token">{% csrf_token %}</form>
+    <!-- Logout Modal-->
+    {% include "search_manager/smg_logout.html" %}
+    <!-- Bootstrap core JavaScript-->
+    <script src="{% static "search_manager/vendor/jquery/jquery.min.js" %}"></script>
+    <script src="{% static "search_manager/vendor/bootstrap/js/bootstrap.bundle.min.js" %}"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="{% static "search_manager/vendor/jquery-easing/jquery.easing.min.js" %}"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="{% static "search_manager/vendor/chart.js/Chart.min.js" %}"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="{% static "search_manager/js/sb-admin.min.js" %}"></script>
+    <!-- Custom scripts for this page-->
+    <script src="{% static "search_manager/js/sb-admin-charts.min.js" %}"></script>
+    <script src="{% static "search_manager/js/admin_login.js" %}"></script>
+    <script>
+        var getdata = "{% url "webdata" %}";
+        var getsearchdata = "{% url "getsearchdata" %}";
+        var delete_data_sr = "{% url "delete_searhe_data" %}";
+    </script>
+    <script src="{% static "search_manager/js/gateone.js" %}"></script>
+    <script src="{% static "search_manager/js/charts.js" %}"></script>
+    <script src="{% static "search_manager/js/jquery.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "search_manager/js/paging.js" %}"></script>
+  </div>
+  </div>
+<script>
+    function run() {
+        $("#page_nav").paging({
+            pageNo:data_page,
+            totalPage: Math.ceil(data_num/10),
+            totalSize: data_num,
+            callback: function(num) {
+                getID("page").value = num;
+                get_tabledata();
+            }
+        });
+    }
+</script>
+</body>
+
+</html>

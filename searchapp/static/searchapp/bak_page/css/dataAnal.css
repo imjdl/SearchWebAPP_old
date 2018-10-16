@@ -1,0 +1,100 @@
+body {
+    margin:0;
+    padding: 0;
+    background: url("../../img/mapbg.png");
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    overflow-x: hidden;
+    color: #28FEFC;
+}
+.all_div{
+    margin: -100px auto;
+    width: 1000px;
+    height: auto;
+}
+#bar3{
+    width: 100%;
+    height: auto;
+}
+.statistic-total {
+    top:-100px;
+    text-align: center;
+    padding: 50px 70px;
+}
+
+.statistic-total .card .statistic-card {
+    color: #fff;
+    padding: 18px;
+    width: 300px;
+    height: 194px;
+}
+
+.statistic-total .card .one {
+    background: #267ce0;
+    -webkit-box-shadow: 0 0 8px #267ce0;
+    box-shadow: 0 0 8px #267ce0;
+}
+
+.statistic-total .card .two {
+    background: #44cb7e;
+    -webkit-box-shadow: 0 0 8px #44cb7e;
+    box-shadow: 0 0 8px #44cb7e;
+}
+
+.statistic-total .card .three {
+    background: #9ca4bf;
+    -webkit-box-shadow: 0 0 8px #9ca4bf;
+    box-shadow: 0 0 8px #9ca4bf;
+}
+
+.statistics-card-title {
+    height: 44px;
+    line-height: 44px;
+    font-size: 20px;
+    text-align: left;
+}
+
+.statistics-card-icon {
+    display: inline-block;
+    margin-right: 18px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #fff;
+    line-height: 44px;
+    text-align: center;
+    vertical-align: top;
+}
+
+.statistics-card-icon img {
+    width: 26px;
+    height: 26px;
+    vertical-align: middle;
+}
+
+.statistics-card-value {
+    margin-top: 30px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 40px;
+    text-align: center;
+}
+
+.statistic-bar {
+    /* height: 1200px; */
+}
+
+.statistic-total-bar {
+    text-align: center;
+    padding: 50px 100px;
+}
+
+.statistic-bar h1 {
+    /* text-align: center; */
+}
+
+.main {
+    width: 100%;
+    height: 400px;
+}

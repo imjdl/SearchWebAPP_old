@@ -1,0 +1,15 @@
+<div class="xq_bag" id="bar3">
+    <ul class="xq_navbar">
+        <li class="xq_navli"><a href="http://127.0.0.1">首页</a></li>
+        <li class="xq_navli"><a href="{% url "dataanl" %}">数据分析</a></li>
+        <li class="xq_navli"><a href="{% url "help" %}">帮助</a></li>
+        <li class="xq_navli"><a href="{% url "about" %}">关于</a></li>
+        <li class="xq_navli"><a href="{% url "contact" %}">联系我们</a></li>
+        {% if user_name %}
+            <li class="xq_navli"><a id="username" href="#">{{ user_name }}</a></li>
+            <li class="xq_navli"><a href="#" onclick="logout()">注销</a></li>
+        {% else%}
+            <li class="xq_navli"><a href="#" onclick='show_login(this)'>登录/注册</a></li>
+        {% endif %}
+    </ul>
+</div>

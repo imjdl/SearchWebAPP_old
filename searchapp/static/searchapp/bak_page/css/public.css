@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    font-family: Helvetica Neue For Number, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif;
+    height: 100%;
+}
+
+.navbar .container-fluid ul {
+    margin-right: 10px;
+}
+
+.navbar .container-fluid .navbar-header a {
+    margin-left: 80px;
+}
+
+.container {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    font-size: 14px;
+    display: block;
+    overflow-x: hidden;
+    /* margin-bottom: 100px; */
+}
+
+.container .banner .navbar .container-fluid a {
+    color: #eeeff4;
+}
+
+.container .banner .navbar .container-fluid ul li a:hover {
+    color: #0f0f0f;
+}
+
+.container .banner .navbar .container-fluid ul .active a {
+    color: #ffff00;
+}
+
+footer {
+    /* position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    clear: both; */
+    text-align: center;
+    height: 114px;
+    line-height: 114px;
+    background: #2e313a;
+    color: #fff;
+}

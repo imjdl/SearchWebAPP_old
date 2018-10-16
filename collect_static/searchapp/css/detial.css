@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: #28FEFC;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: url("../img/mapbg.png");
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-attachment:fixed
+}
+.all_div{
+    margin: -100px auto;
+    width: 1000px;
+    height: auto;
+}
+#bar3{
+    width: 100%;
+    height: auto;
+}
+.map_data{
+    margin: -80px auto;
+    width:100%;
+    height:auto;
+}
+#googleMap{
+    margin: 0 auto;
+    width: 100%;
+    height: 400px;
+}
+.data_detial{
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+}
+.data_detial_left{
+    width: 100%;
+    height: 80px;
+}
+.data_detial_right{
+    width: 100%;
+    height: 200px;
+}
+.data_text{
+    width: 99%;
+    height: 200px;
+}
+.data_text pre {
+    padding: 5px;
+    width: 100%;
+    height: 150px;
+    overflow: auto;
+    border: 1px solid #e0e4e5;
+    line-height: 20px;
+}
+.end{
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+}
+.clear{
+    clear: both;
+}
+.data_detial_left table{
+    border-top:1pt solid #C1DAD7;
+    border-left:1pt solid #C1DAD7;
+    margin: 0 auto;
+}
+.data_detial_left td{
+    padding:2px 7px;
+    text-align:center;
+    border-right:1pt solid #C1DAD7;
+    border-bottom:1pt solid #C1DAD7;
+}
+.data_detial_left tr:nth-of-type(odd){
+    background:#34A5DD;
+    color: orangered;
+} /* odd 标识奇数行，even标识偶数行 */
+#port_detial_list{
+    width: 100%;
+    height: auto;
+    display: none;
+}

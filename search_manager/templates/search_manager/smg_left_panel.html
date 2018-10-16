@@ -1,0 +1,40 @@
+<ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="仪表盘">
+        <a class="nav-link" href="{% url "manager" %}">
+            <i class="fa fa-fw fa-dashboard"></i>
+            <span class="nav-link-text">仪表盘</span>
+        </a>
+    </li>
+    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="数据管理">
+        <a class="nav-link" href={% url "charts" %}>
+            <i class="fa fa-fw fa-area-chart"></i>
+            <span class="nav-link-text">数据管理</span>
+        </a>
+    </li>
+    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="用户管理">
+        <a class="nav-link" href={% url "people" %}>
+            <i class="fa fa-fw fa-table"></i>
+            <span class="nav-link-text">用户管理</span>
+        </a>
+    </li>
+    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="消息管理">
+        <a class="nav-link" href={% url "artical" %}>
+            <i class="fa fa-fw fa-sitemap"></i>
+            <span class="nav-link-text">消息管理</span>
+        </a>
+    </li>
+{#    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="组件">#}
+{#        <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">#}
+{#            <i class="fa fa-fw fa-wrench"></i>#}
+{#            <span class="nav-link-text">控制组件</span>#}
+{#        </a>#}
+{#        <ul class="sidenav-second-level collapse" id="collapseComponents">#}
+{#            <li>#}
+{#                <a href={% url "navbar" %}>站点防护</a>#}
+{#            </li>#}
+{#            <li>#}
+{#                <a href={% url "navbar" %}>端口扫描</a>#}
+{#            </li>#}
+{#        </ul>#}
+{#    </li>#}
+</ul>
